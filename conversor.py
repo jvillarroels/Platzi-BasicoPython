@@ -1,28 +1,33 @@
 # El numeral coloca la linea en comentario
-menu = """BIENVENIDO AL CONVERSOR DE MODEDAS
 
-1 - Pesos Colombianos 
-2 - Pesos Argentinos
-3 - Pesos Mexicanos 
+def conversor(tipo_pesos, valor_dolar):
+    pesos = input('Cuantos pesos ' + tipo_pesos + ' tienes?: ')
+    pesos = float(pesos)
+    dolares = pesos / valor_dolar
+    dolares = round(dolares, 2)
+    dolares = str(dolares)
+    print('Tienes $ ' + dolares + ' dólares ')
+
+
+
+menu = """
+Bienvenidos al conversor de monedas
+
+1 - Pesos colombianos
+2 - Pesos argentinos
+3 - Pesos mexicanos
 
 Elige una opción: """
 
-opcion = int(input(menu)) 
+opcion = int(input(menu))
+if opcion == 1:
+    conversor('colombianos', 3875)
 
-if opcion == 1: 
-    pesos = float(input("¿Cuántos pesos Colombianos tienes? "))
-    valor_dolar = 3875
-    dolares = round(pesos /valor_dolar, 2)
-    print("Tienes $" + str(dolares)+ " dólares")
 elif opcion == 2:
-    pesos = float(input("¿Cuántos pesos Argentinos tienes? "))
-    valor_dolar = 65
-    dolares = round(pesos /valor_dolar, 2)
-    print("Tienes $" + str(dolares)+ " dólares")
+    conversor('argentinos', 65)
+
 elif opcion == 3:
-    pesos = float(input("¿Cuántos pesos Mexicanos tienes? "))
-    valor_dolar = 24
-    dolares = round(pesos /valor_dolar, 2)
-    print("Tienes $" + str(dolares)+ " dólares")
+    conversor('mexicanos', 24)
+
 else:
-    print("Ingresa una opción correcta")
+    print('Ingresa una opción correcta por favor ' )
